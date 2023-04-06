@@ -1,0 +1,170 @@
+﻿@model FirstTask.Models.Hello
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>My Example</title>
+
+    <!-- CSS -->
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+
+        .myForm {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            font-size: 0.8em;
+            width: 20em;
+            padding: 1em;
+            border: 1px solid #ccc;
+        }
+
+            .myForm * {
+                box-sizing: border-box;
+            }
+
+            .myForm fieldset {
+                border: none;
+                padding: 0;
+            }
+
+            .myForm legend,
+            .myForm label {
+                padding: 0;
+                font-weight: bold;
+            }
+
+                .myForm label.choice {
+                    font-size: 0.9em;
+                    font-weight: normal;
+                }
+
+            .myForm input[type="text"],
+            .myForm input[type="tel"],
+            .myForm input[type="email"],
+            .myForm input[type="datetime-local"],
+            .myForm select,
+            .myForm textarea {
+                display: block;
+                width: 100%;
+                border: 1px solid #ccc;
+                font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+                font-size: 0.9em;
+                padding: 0.3em;
+            }
+
+            .myForm textarea {
+                height: 100px;
+            }
+
+            .myForm button {
+                padding: 1em;
+                border-radius: 0.5em;
+                background: #eee;
+                border: none;
+                font-weight: bold;
+                margin-top: 1em;
+            }
+
+                .myForm button:hover {
+                    background: #ccc;
+                    cursor: pointer;
+                }
+
+        table, th, td {
+            border: 1px solid black;
+
+        }
+    </style>
+
+</head>
+<body>
+
+    <form class="myForm" method="post" enctype="application/x-www-form-urlencoded" asp-controller="Hello" asp-action="Update">
+
+        <p>
+            <label>
+                Name
+                <input type="text" name="Name" required value="@ViewBag.d.Name" >
+            </label>
+        </p>
+
+        <p>
+            <label>
+                Phone
+                <input type="tel" name="Phone" required value="@ViewBag.d.Phone">
+            </label>
+        </p>
+
+        <p>
+            <label>
+                Email
+                <input type="email" name="Email" required value="@ViewBag.d.Email">
+            </label>
+        </p>
+        <p>
+
+        <label>
+            Pickup Date/Time
+            <input type="datetime" name="Time" required value="@ViewBag.d.Time">
+        </label>
+        </p>
+
+        <p>
+            <label>
+                Pickup Place
+                <select id="pickup_place" name="Place">
+                    <option>@ViewBag.d.Place</option>
+                    <option value="" selected="selected">Select One</option>
+                    <option value="Place">Mechi Multiple Campus</option>
+                    <option value="Place">Balmiki Province</option>
+                    <option value="Place">Gomendra Multiple Campus</option>
+                </select>
+            </label>
+        </p>
+
+
+
+
+
+        <p>
+            
+            <button type="submit" asp-controller="Hello" asp-action="update">Edit</button>
+            
+
+        </p>
+
+
+
+    </form>
+    @*<table>
+        <tr>
+            <th>First Name</th>
+            <th>Phone number</th>
+            <th>Email Address</th>
+            <th>Time</th>
+            <th>Place</th>
+        </tr>
+        @{
+            int i = 1;
+        }
+        @foreach (var pg in ViewBag.data)
+        {
+                <tr>
+                    <td>@i</td>
+                    <td> @pg.Name</td>
+                    <td>@pg.Phone</td>
+                    <td> @pg.Email</td>
+                    <td>@pg.Time</td>
+                    <td>@pg.Place</td>
+                </tr>
+            i++;
+        }
+
+
+    </table>*@
+</body>
+</html>
