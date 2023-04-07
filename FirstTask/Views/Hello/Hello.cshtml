@@ -160,8 +160,8 @@
                 <td> @pg.Email</td>
                 <td>@pg.Time</td>
                 <td>@pg.Place</td>
-                <td> <button type="submit" asp-controller="Hello" asp-action="Delete">Delete</button>
-                    <button type="submit" asp-controller="Hello" asp-action="Update">Update</button>
+                <td> <button type="submit" asp-controller="Hello" asp-action="Delete" asp-route-Id="@pg.Id">Delete</button>
+                    <button type="submit" asp-controller="Hello" asp-action="update" asp-route-Id="@pg.Id">Update</button>
                     </td>
             </tr>
             i++;

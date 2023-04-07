@@ -42,18 +42,18 @@ namespace FirstTask.Controllers
         }
         //delete
         [HttpGet]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int Id)
         {
-            var data = _context.Hellos.Find(id);
+            var data = _context.Hellos.Find(Id);
             _context.Hellos.Remove(data);
             _context.SaveChanges();
 
             return RedirectToAction("Hello");
         }
         //update
-        public IActionResult update(int id)
+        public IActionResult update(int Id)
         {
-            var data = _context.Hellos.Find(id);
+            var data = _context.Hellos.Find(Id);
             ViewBag.d = data;
             return View();
 
