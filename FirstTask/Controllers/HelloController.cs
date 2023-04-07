@@ -21,7 +21,7 @@ namespace FirstTask.Controllers
             ViewBag.data = dataselect;
             return View();
         }
-
+        //Insert Data
         [HttpPost]
         public IActionResult Hello (Hello hello)
 
@@ -40,7 +40,7 @@ namespace FirstTask.Controllers
             _context.SaveChanges();
             return RedirectToAction("Hello");
         }
-        //delete
+        //delete Data
         [HttpGet]
         public IActionResult Delete(int Id)
         {
@@ -50,7 +50,8 @@ namespace FirstTask.Controllers
 
             return RedirectToAction("Hello");
         }
-        //update
+
+        //update Data
         public IActionResult update(int Id)
         {
             var data = _context.Hellos.Find(Id);
@@ -59,6 +60,7 @@ namespace FirstTask.Controllers
 
         }
 
+        [HttpPost]
         public IActionResult Update(Hello hello)
         {
             Hello obj = new Hello()
@@ -74,7 +76,7 @@ namespace FirstTask.Controllers
             _context.SaveChanges();
             return RedirectToAction("Hello");
         }
-
+       
 
     }
 }

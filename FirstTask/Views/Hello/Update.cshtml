@@ -84,7 +84,6 @@
 <body>
 
     <form class="myForm" method="post" enctype="application/x-www-form-urlencoded" asp-controller="Hello" asp-action="Update">
-
         <p>
             <label>
                 Name
@@ -108,8 +107,8 @@
         <p>
 
         <label>
-            Pickup Date/Time
-            <input type="datetime" name="Time" required value="@ViewBag.d.Time">
+           Your age
+            <input type="number" name="Time" required value="@ViewBag.d.Time">
         </label>
         </p>
 
@@ -118,10 +117,9 @@
                 Pickup Place
                 <select id="pickup_place" name="Place">
                     <option>@ViewBag.d.Place</option>
-                    <option value="" selected="selected">Select One</option>
-                    <option value="Place">Mechi Multiple Campus</option>
-                    <option value="Place">Balmiki Province</option>
-                    <option value="Place">Gomendra Multiple Campus</option>
+                    <option value="@ViewBag.d.Place">Mechi Multiple Campus</option>
+                    <option value="@ViewBag.d.Place">Balmiki Province</option>
+                    <option value="@ViewBag.d.Place">Gomendra Multiple Campus</option>
                 </select>
             </label>
         </p>
@@ -133,6 +131,7 @@
         <p>
             
             <button type="submit" asp-controller="Hello" asp-action="Update">Edit</button>
+            <button type="submit" asp-controller="Hello" asp-action="Hello">Back</button>
             
 
         </p>
@@ -162,6 +161,8 @@
                     <td>@pg.Place</td>
                 </tr>
             i++;
+            
+        
         }
 
 

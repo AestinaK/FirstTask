@@ -108,8 +108,8 @@
         <p>
 
         <label>
-            Pickup Date/Time
-            <input type="datetime" name="Time" required>
+            Your age
+            <input type="number" name="Time" required>
         </label>
         </p>
 
@@ -130,8 +130,8 @@
 
 
         <p>
-            <button type="submit" asp-controller="Hello" asp-action="Hello">Add</button>
-            <button>Edit</button>
+            <button type="submit" asp-controller="Hello" asp-action="Hello" style="align-content:center">Add</button>
+            
            
             
         </p>
@@ -145,8 +145,9 @@
             <th>First Name</th>
             <th>Phone number</th>
             <th>Email Address</th>
-            <th>Time</th>
+            <th>Age</th>
             <th>Place</th>
+            <th>Action</th>
         </tr>
         @{
             int i = 1;
@@ -160,8 +161,10 @@
                 <td> @pg.Email</td>
                 <td>@pg.Time</td>
                 <td>@pg.Place</td>
-                <td> <button type="submit" asp-controller="Hello" asp-action="Delete" asp-route-Id="@pg.Id">Delete</button>
-                    <button type="submit" asp-controller="Hello" asp-action="update" asp-route-Id="@pg.Id">Update</button>
+                <td>
+                    
+                    <a type="submit" asp-controller="Hello" asp-action="Delete" asp-route-Id="@pg.Id">Delete</a>
+                    <a type="submit" asp-controller="Hello" asp-action="update" asp-route-Id="@pg.Id">Update</a>
                     </td>
             </tr>
             i++;
